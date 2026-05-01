@@ -14,7 +14,7 @@ function Navbar() {
     return (
         <div className="fixed w-full z-50">
             <div
-                className={`navbar px-4 md:px-16 py-2
+                className={`navbar px-5 lg:px-16 py-2
     backdrop-blur-md
     border-b border-white/20
     shadow-sm

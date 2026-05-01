@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "title": "The Alchemist",
+        "author": "Paulo Coelho",
+        "description": "The Alchemist follows Santiago, a young shepherd who dreams of discovering treasure near the pyramids of Egypt. Motivated by recurring dreams, he leaves his home and begins a journey filled with challenges and meaningful encounters. Along the way, he meets different people who guide him toward understanding his true purpose. The story highlights the importance of following dreams, listening to one’s heart, and recognizing opportunities. Through simple storytelling, the book teaches deep lessons about destiny, courage, love, and faith, making it inspiring for readers of all ages.",
+        "category": "Story",
+        "available_quantity": 10,
+        "image_url": "https://example.com/images/alchemist.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Clean Code",
+        "author": "Robert C. Martin",
+        "description": "Clean Code is a must-read for developers who want to improve their coding practices. The book emphasizes writing code that is readable, maintainable, and efficient. Robert C. Martin explains key concepts such as proper naming, small functions, and avoiding unnecessary complexity. Through practical examples, he shows how messy code can create problems and how clean code improves teamwork and long-term success. It also introduces ideas like refactoring and code smells, helping programmers continuously improve their work and build high-quality software systems.",
+        "category": "Tech",
+        "available_quantity": 7,
+        "image_url": "https://example.com/images/clean-code.jpg"
+    },
+    {
+        "id": 3,
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "description": "This book introduces complex ideas about the universe in a simple and engaging way. Stephen Hawking explores topics like black holes, the Big Bang, space, and time. He explains how the universe began and how it works using easy language for general readers. The book also discusses the possibility of time travel and the search for a unified theory of physics. It encourages readers to think deeply about existence and humanity’s place in the universe, making it one of the most popular science books ever written.",
+        "category": "Science",
+        "available_quantity": 5,
+        "image_url": "https://example.com/images/history-time.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Stories of the Prophets",
+        "author": "Ibn Kathir",
+        "description": "Stories of the Prophets presents the lives of prophets mentioned in Islamic tradition. It begins with Prophet Adam and continues through major prophets like Noah, Abraham, Moses, and others. Each story highlights lessons about faith, patience, and obedience to Allah. The book shows how prophets faced challenges with strong belief and dedication. It is both educational and inspiring, helping readers understand Islamic history and values while learning important moral lessons for everyday life.",
+        "category": "Story",
+        "available_quantity": 9,
+        "image_url": "https://example.com/images/prophets.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Sealed Nectar",
+        "author": "Safiur Rahman Mubarakpuri",
+        "description": "The Sealed Nectar is a detailed biography of Prophet Muhammad (PBUH). It describes his early life, prophethood, and the spread of Islam. The book explains important historical events, including struggles faced by early Muslims and the migration to Medina. It highlights the Prophet’s character, leadership, and patience. Readers can learn valuable lessons from his life and understand the context of Islamic teachings. This book is widely respected and considered essential for anyone interested in Islamic history.",
+        "category": "Story",
+        "available_quantity": 8,
+        "image_url": "https://example.com/images/sealed-nectar.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Don't Be Sad",
+        "author": "Aaidh ibn Abdullah al-Qarni",
+        "description": "Don't Be Sad is a motivational book based on Islamic teachings. It helps readers overcome sadness, anxiety, and stress by encouraging faith and positivity. The author uses Quranic verses and hadiths to guide readers toward patience and trust in Allah. It reminds people that hardships are temporary and part of life’s journey. The book focuses on gratitude, hope, and inner peace, making it a helpful guide for anyone dealing with difficulties or emotional struggles.",
+        "category": "Story",
+        "available_quantity": 11,
+        "image_url": "https://example.com/images/dont-be-sad.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Forty Hadith Nawawi",
+        "author": "Imam Nawawi",
+        "description": "This book is a collection of important sayings of Prophet Muhammad (PBUH) compiled by Imam Nawawi. It includes forty essential hadiths covering core Islamic principles such as faith, intention, worship, and ethics. Each hadith provides guidance for daily life and spiritual development. The book is simple yet meaningful, making it suitable for beginners and students. It is widely studied and respected in Islamic learning for its clarity and depth.",
+        "category": "Science",
+        "available_quantity": 6,
+        "image_url": "https://example.com/images/40-hadith.jpg"
+    },
+    {
+        "id": 8,
+        "title": "You Don’t Know JS",
+        "author": "Kyle Simpson",
+        "description": "You Don’t Know JS is a deep exploration of JavaScript concepts for developers who want advanced knowledge. The book covers topics like scope, closures, and asynchronous programming. Kyle Simpson explains complex ideas in a structured and understandable way. It helps programmers move beyond basic skills and truly understand how JavaScript works internally. This knowledge allows developers to write better, more efficient code and build stronger web applications.",
+        "category": "Tech",
+        "available_quantity": 10,
+        "image_url": "https://example.com/images/ydkjs.jpg"
+    },
+    {
+        "id": 9,
+        "title": "The Selfish Gene",
+        "author": "Richard Dawkins",
+        "description": "The Selfish Gene explains evolution from a gene-centered perspective. Richard Dawkins describes how genes influence behavior and survival. The book introduces the idea that genes are the main drivers of natural selection. It explores topics like altruism, competition, and inheritance in living organisms. With clear explanations and examples, the book challenges traditional views and helps readers understand biology in a new way.",
+        "category": "Science",
+        "available_quantity": 4,
+        "image_url": "https://example.com/images/selfish-gene.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Harry Potter and the Sorcerer’s Stone",
+        "author": "J.K. Rowling",
+        "description": "This book tells the story of Harry Potter, a young boy who discovers he is a wizard. He joins Hogwarts School and enters a magical world full of adventure. Along with his friends, he faces challenges and uncovers secrets about his past. The story highlights friendship, courage, and the battle between good and evil. It is engaging, imaginative, and loved by readers of all ages.",
+        "category": "Story",
+        "available_quantity": 12,
+        "image_url": "https://example.com/images/harry-potter.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Eloquent JavaScript",
+        "author": "Marijn Haverbeke",
+        "description": "Eloquent JavaScript is a beginner-friendly programming book that teaches JavaScript step by step. It starts with basic concepts and gradually introduces advanced topics. The book includes examples and exercises to help readers practice coding. It focuses on problem-solving skills and understanding how programming works. This makes it a great choice for beginners who want to start their journey in web development.",
+        "category": "Tech",
+        "available_quantity": 13,
+        "image_url": "https://example.com/images/eloquent-js.jpg"
+    },
+    {
+        "id": 12,
+        "title": "The Gene: An Intimate History",
+        "author": "Siddhartha Mukherjee",
+        "description": "This book explores the history and science of genetics. Siddhartha Mukherjee explains how genes shape human traits, diseases, and behavior. The book covers major discoveries and scientists who contributed to genetic research. It also discusses future possibilities and ethical concerns related to genetics. Through storytelling, it connects science with real human experiences, making it both informative and engaging.",
+        "category": "Science",
+        "available_quantity": 5,
+        "image_url": "https://example.com/images/gene.jpg"
+    }
+]
