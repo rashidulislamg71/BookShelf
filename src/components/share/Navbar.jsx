@@ -1,11 +1,29 @@
-import Link from "next/link";
+
+"use client"
+
 import React from "react";
+import Link from "next/link";
 import NavLink from "./NavLink";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
+
+    const pathname = usePathname();
+
+    const isHome = pathname === "/";
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-sm py-2 px-4 md:px-16">
+        <div className="fixed w-full z-50">
+            <div
+                className={`navbar px-4 md:px-16 py-2
+    backdrop-blur-md
+    border-b border-white/20
+    shadow-sm
+    transition-all duration-300
+    ${isHome
+                        ? "bg-white/10"
+                        : "bg-white/60"
+                    }`}
+            >
 
                 {/* LEFT */}
                 <div className="navbar-start">
@@ -58,7 +76,7 @@ function Navbar() {
 
                         <NavLink className="border border-text-[#FFC85C] text-teal-700 hover:bg-teal-50 duration-300 py-1 px-3 rounded" href="/signup">SignUp</NavLink>
 
-                        <NavLink className="bg-teal-600 text-white py-1 px-3 rounded hover:bg-teal-400 duration-300" href="/login">Login</NavLink>
+                        <NavLink className="bg-linear-to-r from-teal-500 to-cyan-500 hover:to-teal-500 transition-all text-white py-1 px-3 rounded hover:bg-teal-400 duration-300" href="/login">Login</NavLink>
 
                     </ul>
                 </div>

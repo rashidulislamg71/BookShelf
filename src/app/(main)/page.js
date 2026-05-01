@@ -6,6 +6,7 @@ function HomePage() {
   return (
     <div>
       <HeroSection />
+      <HeroSection />
       <MarqueeComponent />
     </div>
   )
