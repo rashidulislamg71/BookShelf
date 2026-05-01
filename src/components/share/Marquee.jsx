@@ -31,11 +31,11 @@ function MarqueeComponent() {
   ];
 
   return (
-    <div className="py-3 bg-white/70 backdrop-blur-md border-y border-slate-200">
+    <div className="py-5 bg-white/70 backdrop-blur-md  shadow ">
 
       <Marquee
         pauseOnHover
-        speed={50}
+        speed={70}
         gradient={false}
       >
         {announcements.map((item, index) => (

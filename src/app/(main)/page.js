@@ -1,14 +1,16 @@
 import React from "react";
 import MarqueeComponent from "@/components/share/Marquee";
 import HeroSection from "@/components/HeroSection";
-import FeaturedBookCard from "@/components/ui/FeaturedBookCard";
+import FeaturedBook from "@/components/share/FeaturedBook";
+import Reviews from "@/components/share/Reviews";
 
 function HomePage() {
   return (
     <div>
       <HeroSection />
       <MarqueeComponent />
-      <FeaturedBookCard />
+      <FeaturedBook />
+      <Reviews />
     </div>
   );
 }

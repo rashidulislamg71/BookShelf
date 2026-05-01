@@ -74,9 +74,9 @@ function Navbar() {
                 <div className="navbar-end ">
                     <ul className="flex gap-5">
 
-                        <NavLink className="border border-text-[#FFC85C] text-teal-700 hover:bg-teal-50 duration-300 py-1 px-3 rounded" href="/signup">SignUp</NavLink>
+                        <NavLink className="border border-text-[#FFC85C] text-teal-700 hover:bg-teal-50 duration-300 py-1.5 px-3 rounded" href="/signup">SignUp</NavLink>
 
-                        <NavLink className="bg-linear-to-r from-teal-500 to-cyan-500 hover:to-teal-500 transition-all text-white py-1 px-3 rounded hover:bg-teal-400 duration-300" href="/login">Login</NavLink>
+                        <NavLink className="bg-linear-to-r from-teal-500 to-cyan-500 hover:to-teal-500 transition-all text-white py-1.5 px-3 rounded hover:bg-teal-400 duration-300" href="/login">Login</NavLink>
 
                     </ul>
                 </div>
