@@ -99,7 +99,8 @@ function SignupPage() {
 
             <button
               type="submit"
-              className="w-full bg-teal-600 text-white font-bold py-3.5 rounded-lg mt-4 hover:bg-teal-700 shadow-md hover:shadow-teal-200 transition-all flex items-center justify-center gap-2 group active:scale-[0.99]"
+              className="w-full bg-teal-600 text-white font-bold py-3.5
+               rounded-lg mt-4 hover:bg-teal-700 shadow-md shadow-teal-100 hover:shadow-teal-200 transition-all flex items-center justify-center gap-2 group active:scale-[0.99]"
             >
               Get Started
               <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform" />
