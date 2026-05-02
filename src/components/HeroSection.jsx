@@ -9,6 +9,7 @@ import heroImage from "@/assets/book_shelf_img/hero_banner.png"
 import { GoDotFill } from 'react-icons/go';
 import { FiBookOpen } from 'react-icons/fi';
 import { GiOpenBook } from 'react-icons/gi';
+import Button from './ui/Button';
 
 function HeroSection() {
     return (
@@ -16,9 +17,7 @@ function HeroSection() {
             <div className='md:flex md:justify-between md:gap-10 lg:gap-40 gap-0 items-center'>
 
                 {/* hero content  */}
-                <div className='flex-1  z-50'>
-
-
+                <div className='flex-1 z-50'>
                     <div className='space-y-5'>
                         {/* badge  */}
                         <div className='flex gap-3 items-center justify-around border border-teal-100 w-fit text-teal-700 text-sm uppercase rounded-full px-3 py-1 shadow'>
@@ -33,13 +32,12 @@ function HeroSection() {
                             <span className='text-3xl md:text-4xl font-bold text-[#1f867e] '>Just a Click Away.</span></h1>
 
                         <div className='w-15 h-1 bg-teal-600 '></div>
-                        <p className=' '>Borrow books anytime, anywhere. Explore endless stories, discover new favorites, and keep your reading journey going. Don't learn Don't learn alone, invite your friends.</p>
+                        <p className='mb-10 '>Borrow books anytime, anywhere. Explore endless stories, discover new favorites, and keep your reading journey going—don’t learn alone, invite your friends.</p>
                     </div>
 
                     {/* hero btn  */}
-                    <Link className='group mt-5 flex justify-center items-center gap-1  bg-linear-to-r from-teal-700 to-teal-400 hover:from-teal-500 hover:to-teal-700 transition-all duration-300 w-fit shadow-2xl  py-1.5 px-4 rounded-sm text-white ' href={"/allBook"}>
-                        <GiOpenBook className='group-hover:text-amber-300 duration-300 transition-all' />
-                        Browse Now
+                    <Link className='group inline-block' href={"/allBook"}>
+                     <Button className="w-fit self-start" > <GiOpenBook className='group-hover:text-amber-300 duration-300 transition-all' />  Browse Now</Button>
                     </Link>
                 </div>
 

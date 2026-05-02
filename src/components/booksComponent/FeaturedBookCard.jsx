@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { LuExternalLink } from "react-icons/lu";
+import Button from "../ui/Button";
 
 function FeaturedBookCard({ book }) {
     return (
@@ -30,13 +31,10 @@ function FeaturedBookCard({ book }) {
 
             {/* button */}
             <div className="mt-3">
-                <Link href={`/books/${book.id}`}>
-                    <button className=" w-full py-1.5 text-sm sm:text-base
-                             
-                             bg-linear-to-r from-teal-700 to-teal-400 hover:from-teal-500 hover:to-teal-700 transition-all duration-500 
-                             text-white rounded font-semibold active:scale-95">
-                        View Details
-                    </button>
+                <Link href={`/books/${book.id}`} >
+                  <Button className="w-full" >
+                    View Details
+                  </Button>
                 </Link>
             </div>
 
