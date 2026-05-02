@@ -5,13 +5,13 @@ function ReviewCard({ review }) {
     const { name, country, comment, rating, image } = review;
 
     return (
-        <div className="relative w-[380px] md:w-[420px] md:p-6 rounded-xl backdrop-blur-md border border-gray-300 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div className="relative w-[380px] md:w-[420px] md:p-6 rounded-xl backdrop-blur-md border border-gray-300 bg-gray-100 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
             {/* Soft Gradient Glow (Bottom Left) */}
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-linear-to-tr from-amber-400/30 to-transparent blur-2xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-linear-to-tr from-amber-400/20 to-transparent blur-2xl"></div>
 
             {/* Soft Gradient Glow (Bottom Left) */}
-            <div className="absolute bottom-0 -right-10 w-40 h-40 bg-linear-to-tr from-teal-400/30   to-transparent blur-2xl"></div>
+            <div className="absolute bottom-0 -right-10 w-40 h-40 bg-linear-to-tr from-teal-400/20   to-transparent blur-2xl"></div>
 
             {/* Top Section */}
             <div className="flex justify-between items-start relative z-10">

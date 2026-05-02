@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { usePathname } from "next/navigation";
+import Logo from "../ui/Logo";
 
 function Navbar() {
 
@@ -14,7 +15,7 @@ function Navbar() {
     return (
         <div className="fixed w-full z-50">
             <div
-                className={`navbar px-5 lg:px-16 py-2
+                className={`navbar px-2 md:px-8 lg:px-16 py-2
     backdrop-blur-md
     border-b border-white/20
     shadow-sm
@@ -25,12 +26,12 @@ function Navbar() {
                     }`}
             >
 
-                {/* LEFT */}
+                {/* left */}
                 <div className="navbar-start">
 
-                    {/* MOBILE MENU */}
+                    {/* mobile menu */}
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className=" btn-ghost lg:hidden mr-2">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -56,9 +57,12 @@ function Navbar() {
                         </ul>
                     </div>
 
-                    {/* LOGO */}
-                    <Link href="/" className=" text-xl">
-                        BookShelf
+                    {/* logo */}
+                    <Link href="/" className="flex items-end ">
+                        <Logo />
+                        <div>
+                            <h1 className="text-xl md:text-2xl font-semibold text-teal-800  ">BookShelf</h1>
+                        </div>
                     </Link>
                 </div>
 

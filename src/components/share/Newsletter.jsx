@@ -16,7 +16,10 @@ function Newsletter() {
 
           {/* background glow */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-teal-100 rounded-full blur-3xl opacity-50"></div>
+          
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+
+          <div className="absolute top-24 left-110 w-64 h-64 bg-green-200 rounded-full blur-3xl opacity-50"></div>
 
           <div className="relative grid lg:grid-cols-2 gap-10 items-center ">
 
