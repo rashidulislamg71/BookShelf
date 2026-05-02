@@ -157,7 +157,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative mt-20 overflow-hidden">
+    <footer className="relative overflow-hidden">
 
       {/* Background */}
       <div
