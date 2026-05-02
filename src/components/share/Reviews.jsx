@@ -98,11 +98,20 @@ function Reviews() {
 
   return (
     <section className="py-16">
-      <h2 className="text-center text-3xl font-bold mb-10">
-        What Readers Say
-      </h2>
+       {/* section title  */}
+      <div className="text-center mb-12 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          Loved by Readers Around the World
+        </h2>
 
-      <Marquee pauseOnHover speed={45} gradient={false}>
+        <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+          Real feedback from our community of book lovers who use BookShelf daily
+          to discover, read, and borrow their favorite books.
+        </p>
+      </div>
+
+{/* review marque section  */}
+      <Marquee pauseOnHover speed={70} gradient={false}>
         <div className="flex gap-6 px-4">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />

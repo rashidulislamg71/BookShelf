@@ -5,7 +5,7 @@ function ReviewCard({ review }) {
     const { name, country, comment, rating, image } = review;
 
     return (
-        <div className="relative w-[420px] p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-gray-300 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div className="relative w-[380px] md:w-[420px] md:p-6 rounded-xl backdrop-blur-md border border-gray-300 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
 
             {/* Soft Gradient Glow (Bottom Left) */}
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-linear-to-tr from-amber-400/30 to-transparent blur-2xl"></div>
@@ -22,7 +22,7 @@ function ReviewCard({ review }) {
                     <img
                         src={image}
                         alt={name}
-                        className="w-14 h-14 rounded-full object-cover ring-2 ring-white shadow"
+                        className="w-14 h-14 rounded-full object-cover ring-2 ring-gray-300 shadow"
                     />
 
                     <div>
