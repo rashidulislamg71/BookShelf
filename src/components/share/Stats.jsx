@@ -40,7 +40,7 @@ function Stats() {
     ];
 
     return (
-        <section className=" ">
+        <section className="px-4 md:px-16 mt-15">
             <div className="max-w-7xl mx-auto px-6">
                   {/*  Section Title */}
                 <div className="text-center mb-12">
@@ -57,9 +57,8 @@ function Stats() {
                             key={item.id}
                             className="bg-white py-4 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-sm hover:shadow-gray-200/50"
                         >
-                            {/* Decorative background circle on hover */}
-                            <div className={``} />
-
+                         
+                            <div/>
                             <div className="relative flex flex-col items-center">
                                 {/* Icon Circle */}
                                 <div className={`flex items-center justify-center w-12 h-12 rounded-full ${item.bgColor} ${item.color}  `}>

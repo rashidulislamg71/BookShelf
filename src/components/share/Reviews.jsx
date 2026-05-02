@@ -97,8 +97,8 @@ function Reviews() {
 
 
   return (
-    <section className="py-16">
-       {/* section title  */}
+    <section className="pt-10">
+      {/* section title  */}
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Loved by Readers Around the World
@@ -110,8 +110,8 @@ function Reviews() {
         </p>
       </div>
 
-{/* review marque section  */}
-      <Marquee pauseOnHover speed={70} gradient={false}>
+      {/* review marque section  */}
+      <Marquee pauseOnHover speed={70} direction={"right"} gradient={false}>
         <div className="flex gap-6 px-4">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />

@@ -172,19 +172,18 @@ function Footer() {
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#3BC1A8] opacity-50 blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-30 blur-[120px] translate-x-1/3 translate-y-1/3"></div>
 
-      <div className="relative z-10 pt-20 pb-10 px-6 max-w-7xl mx-auto">
+      <div className="relative z-10 px-4 py-10 md:px-16 md:pt-15 max-w-7xl mx-auto">
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-10">
 
-          {/* logo */}
+          {/* logo & about */}
           <div className="md:col-span-5 space-y-6">
-
-            <div className="flex items-end w-fit border-b-2 border-amber-300 pb-1">
+            <div className=" border border-teal-500/30 rounded-xl shadow bg-gray-50/5 p-4 max-w-sm flex items-end gap-1">
               <Logo />
               <h1 className="text-2xl font-semibold text-white" >Book<span className='text-teal-500'>Shelf</span></h1>
             </div>
 
-            <p className="text-gray-200 text-md leading-relaxed max-w-md">
+            <p className="text-gray-300 text-md leading-relaxed max-w-md">
               Your digital gateway to thousands of stories.
               Join our community and start your reading journey today.
             </p>
@@ -223,11 +222,10 @@ function Footer() {
           </div>
 
           {/* contact */}
-          {/* contact */}
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-white font-bold text-xl">Contact Us</h4>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 space-y-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 space-y-6">
 
               {/* Address */}
               <div className="flex items-center gap-4 group cursor-pointer">
@@ -274,7 +272,7 @@ function Footer() {
         </div>
 
         {/* bottom */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
 
           <p className="text-gray-400 text-sm">
             © {currentYear} BookFlow. Crafted for book lovers.

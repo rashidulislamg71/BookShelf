@@ -13,7 +13,7 @@ function Navbar() {
 
     const isHome = pathname === "/";
     return (
-        <div className="fixed w-full z-50">
+        <div className="fixed w-full z-100">
             <div
                 className={`navbar px-2 md:px-8 lg:px-16 py-2
     backdrop-blur-md
@@ -80,7 +80,7 @@ function Navbar() {
 
                         <NavLink className="border border-text-[#FFC85C] text-teal-700 hover:bg-teal-50 duration-300 py-1.5 px-3 rounded" href="/signup">SignUp</NavLink>
 
-                        <NavLink className="bg-linear-to-r from-teal-500 to-cyan-500 hover:to-teal-500 transition-all text-white py-1.5 px-3 rounded hover:bg-teal-400 duration-300" href="/login">Login</NavLink>
+                        <NavLink className="bg-linear-to-r from-teal-700 to-teal-400 text-white py-1.5 px-3 rounded " href="/login">Login</NavLink>
 
                     </ul>
                 </div>

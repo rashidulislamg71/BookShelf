@@ -6,8 +6,6 @@
 :root {
   --background: #ffffff;
   --foreground: #2C3947;
-  --secondary: #218b82;
-  --btnBg: #1a877e;
 }
 
 
@@ -21,7 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }

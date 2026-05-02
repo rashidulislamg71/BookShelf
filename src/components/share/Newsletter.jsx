@@ -19,7 +19,7 @@ function Newsletter() {
           
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
 
-          <div className="absolute top-24 left-110 w-64 h-64 bg-green-200 rounded-full blur-3xl opacity-50"></div>
+          <div className="absolute top-24 left-110 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl opacity-50"></div>
 
           <div className="relative grid lg:grid-cols-2 gap-10 items-center ">
 
@@ -66,7 +66,7 @@ function Newsletter() {
 
                 <button
                   type="submit"
-                  className="bg-teal-600 hover:bg-teal-700 text-white font-medium py-4 rounded-xl 
+                  className=" bg-linear-to-r from-teal-700 to-teal-400  hover:bg-teal-700 text-white font-medium py-4 rounded-xl 
                              flex items-center justify-center gap-2 transition-all group"
                 >
                   Join Now
