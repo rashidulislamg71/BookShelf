@@ -5,10 +5,10 @@ function Button({ className, children }) {
     <div>
       <button className={` cursor-pointer inline-flex items-center justify-center gap-2
         bg-linear-to-r from-teal-700 to-teal-400 
-        hover:from-teal-500 hover:to-teal-700
+         hover:to-teal-700
         text-white font-medium
         px-5 py-2 rounded-md
-        transition-all duration-300
+        transition-all duration-500
         shadow-md hover:shadow-lg
         active:scale-95
         ${className}`}>

@@ -3,16 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function NavLink({ href, children, className }) {
-    const pathname = usePathname();
+function NavLink({ href, children, className = "" }) {
+  const pathname = usePathname();
 
-    const isActive = pathname === href;
+  const isActive = pathname === href;
 
-    return (
-        <li>
-            <Link href={href} className={`hover:text-teal-700 ${isActive ? "border-b-2 text-teal-700" : ""} ${className} `} >{children}</Link>
-        </li>
-    );
+  return (
+    <Link
+      href={href}
+      className={`hover:text-teal-700 transition-all ${
+        isActive ? "text-teal-700 border-b-2 border-teal-700" : ""
+      } ${className}`}
+    >
+      {children}
+    </Link>
+  );
 }
 
 export default NavLink;

@@ -10,12 +10,12 @@ function FeaturedBookCard({ book }) {
         <div className="group">
 
             <div className="relative w-full h-48 sm:h-52 md:h-56 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100">
+                {book.image_url && (
+                    <img src={book.image_url} alt={book.title}
+                        className="w-auto h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                )}
 
-                <img
-                    src={book.image_url}
-                    alt={book.title}
-                    className="w-auto h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
 
                 {/* hover effect */}
                 <div className="absolute inset-0  bg-linear-to-r from-teal-700/30 to-teal-400/30  opacity-0 
@@ -32,9 +32,9 @@ function FeaturedBookCard({ book }) {
             {/* button */}
             <div className="mt-3">
                 <Link href={`/books/${book.id}`} >
-                  <Button className="w-full" >
-                    View Details
-                  </Button>
+                    <Button className="w-full" >
+                        View Details
+                    </Button>
                 </Link>
             </div>
 

@@ -1,7 +1,5 @@
 
-
 "use client";
-
 import React, { useState } from "react";
 import BookCard from "@/components/ui/BookCard";
 import { searchBook } from "@/lib/bookUtils";

@@ -13,11 +13,15 @@ function BookCard({ book }) {
 
                 {/* Image */}
                 <div className="flex justify-center relative">
-                    <img
-                        src={book.image_url}
-                        alt={book.title}
-                        className="h-32 md:h-40 object-contain transition-transform duration-300 hover:scale-105"
-                    />
+
+
+                    {book.image_url && (
+                        <img
+                            src={book.image_url}
+                            alt={book.title}
+                            className="h-32 md:h-40 object-contain transition-transform duration-300 hover:scale-105"
+                        />
+                    )}
 
                     {/* Category badge */}
                     <span className="absolute top-2 left-2 text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded-full">
