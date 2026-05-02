@@ -223,34 +223,52 @@ function Footer() {
           </div>
 
           {/* contact */}
+          {/* contact */}
           <div className="md:col-span-4 space-y-6">
             <h4 className="text-white font-bold text-xl">Contact Us</h4>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 space-y-5">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 space-y-6">
 
-              {/* address  */}
-              <div className="flex items-start gap-4">
-                <div className="bg-[#3BC1A8]/20 p-2 rounded-lg">
-                  <LuMapPin className="text-[#3BC1A8]" />
+              {/* Address */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="min-w-[40px] h-10 flex items-center justify-center bg-[#3BC1A8]/20 rounded-lg 
+                      transition-all duration-300 group-hover:bg-[#3BC1A8] group-hover:scale-110">
+                  <LuMapPin className="text-[#3BC1A8] group-hover:text-[#005461] transition" size={18} />
                 </div>
-                <span className="text-gray-200">Dhaka, Bangladesh</span>
+
+                <Link
+                  href="https://maps.google.com"
+                  target="_blank"
+                  className="text-gray-200 transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
+                >
+                  Dhaka, Bangladesh
+                </Link>
               </div>
 
-              {/* phone  */}
-              <div className="flex items-center gap-4">
-                <div className="bg-[#3BC1A8]/20 p-2 rounded-lg">
-                  <LuPhone className="text-[#3BC1A8]" />
+              {/* Phone */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="min-w-[40px] h-10 flex items-center justify-center bg-[#3BC1A8]/20 rounded-lg 
+                      transition-all duration-300 group-hover:bg-[#3BC1A8] group-hover:scale-110">
+                  <LuPhone className="text-[#3BC1A8] group-hover:text-[#005461] transition" size={18} />
                 </div>
-                <span className="text-gray-200">+880 1234 567 890</span>
+
+                <span className="text-gray-200 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
+                  +880 1234 567 890
+                </span>
               </div>
 
-              {/* email  */}
-              <div className="flex items-center gap-4">
-                <div className="bg-[#3BC1A8]/20 p-2 rounded-lg">
-                  <LuMail className="text-[#3BC1A8]" />
+              {/* Email */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="min-w-[40px] h-10 flex items-center justify-center bg-[#3BC1A8]/20 rounded-lg 
+                      transition-all duration-300 group-hover:bg-[#3BC1A8] group-hover:scale-110">
+                  <LuMail className="text-[#3BC1A8] group-hover:text-[#005461] transition" size={18} />
                 </div>
-                <span className="text-gray-200">hello@bookflow.com</span>
+
+                <span className="text-gray-200 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
+                  hello@bookflow.com
+                </span>
               </div>
+
             </div>
           </div>
         </div>
