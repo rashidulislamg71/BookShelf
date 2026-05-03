@@ -11,7 +11,7 @@ function AllBooksPage() {
     <section className="pt-28 pb-16 px-4 md:px-16">
 
       {/* hero section*/}
-      <div className="text-center mb-12">
+      <div className="text-center mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-700">
           Explore All Books
         </h1>

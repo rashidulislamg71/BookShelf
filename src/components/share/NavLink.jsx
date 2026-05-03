@@ -11,9 +11,8 @@ function NavLink({ href, children, className = "" }) {
   return (
     <Link
       href={href}
-      className={`hover:text-teal-700 transition-all ${
-        isActive ? "text-teal-700 border-b-2 border-teal-700" : ""
-      } ${className}`}
+      className={`hover:text-teal-700 transition-all ${isActive ? "text-teal-700 border-b-2 border-teal-700" : ""
+        } ${className}`}
     >
       {children}
     </Link>

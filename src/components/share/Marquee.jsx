@@ -31,12 +31,13 @@ function MarqueeComponent() {
   ];
 
   return (
-    <div className="py-5 bg-white/70 backdrop-blur-md  shadow ">
+    <div>
 
       <Marquee
         pauseOnHover
         speed={70}
         gradient={false}
+        className="py-5 bg-white/70 backdrop-blur-md  shadow "
       >
         {announcements.map((item, index) => (
           <div key={index} className="flex items-center">

@@ -7,6 +7,7 @@ import Logo from "../ui/Logo";
 
 function Navbar() {
 
+
     return (
         <div className="fixed w-full z-[100]">
             <div
@@ -45,9 +46,13 @@ function Navbar() {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
                         >
 
-                            <NavLink href="/">Home</NavLink>
-                            <NavLink href="/allBook">All Books</NavLink>
+                            <li>
+                                <NavLink href="/">Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink href="/allBook">All Books</NavLink>
 
+                            </li>
                         </ul>
                     </div>
 
@@ -64,9 +69,12 @@ function Navbar() {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex gap-10">
 
-                        <NavLink href="/">Home</NavLink>
-
-                        <NavLink href="/allBook">All Books</NavLink>
+                        <li>
+                            <NavLink href="/">Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/allBook">All Books</NavLink>
+                        </li>
 
                     </ul>
                 </div>
@@ -74,19 +82,10 @@ function Navbar() {
                 {/* right section */}
                 <div className="navbar-end">
                     <ul className="flex gap-5">
-
                         <li>
                             <NavLink
-                                className="border border-teal-600 text-teal-700 hover:bg-teal-50 duration-300 py-1.5 px-3 rounded"
-                                href="/signup"
-                            >
-                                SignUp
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink
-                                className="bg-linear-to-r from-teal-700 to-teal-400 text-white py-1.5 px-3 rounded"
+                                className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
+                             hover:bg-teal-50 duration-300 py-1 px-5 rounded"
                                 href="/login"
                             >
                                 Login
@@ -102,3 +101,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
