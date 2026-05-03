@@ -4,9 +4,13 @@ import React from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import Logo from "../ui/Logo";
+import { signOut, useSession } from "@/lib/auth-client";
+import { FaUser } from "react-icons/fa";
 
 function Navbar() {
 
+    const { data, isPending } = useSession();
+    const user = data?.user;
 
     return (
         <div className="fixed w-full z-[100]">
@@ -82,15 +86,26 @@ function Navbar() {
                 {/* right section */}
                 <div className="navbar-end">
                     <ul className="flex gap-5">
-                        <li>
-                            <NavLink
-                                className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
+                        {
+                            isPending ? <li>
+                                <NavLink
+                                    className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
                              hover:bg-teal-50 duration-300 py-1 px-5 rounded"
-                                href="/login"
-                            >
-                                Login
-                            </NavLink>
-                        </li>
+                                    href="/login"
+                                >
+                                    Login
+                                </NavLink>
+                            </li> : user ? <div className="flex gap-2 justify-center items-center"><FaUser /> <button onClick={(() => signOut())}>Sign out</button></div> :
+                                <li>
+                                    <NavLink
+                                        className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
+                             hover:bg-teal-50 duration-300 py-1 px-5 rounded"
+                                        href="/login"
+                                    >
+                                        Login
+                                    </NavLink>
+                                </li>
+                        }
 
                     </ul>
                 </div>
