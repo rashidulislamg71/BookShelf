@@ -93,19 +93,21 @@ function Navbar() {
                 {/* right */}
                 <div className="navbar-end">
                     {
-                        isPending ? <p>lo</p>:
+                        isPending ? <p>lo</p> :
                             user ? (
                                 <div className="flex items-center gap-3" >
 
                                     {/* Avatar */}
-                                    < div className="relative w-9 h-9 rounded-full overflow-hidden border" >
-                                        <img
-                                            src={user.image || "/user.png"}
-                                            alt={user.name || "user"}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </div>
+                                    <Link  href={"/profile"} >
+                                        < div className="relative w-9 h-9 rounded-full overflow-hidden border" >
+                                            <img
+                                                src={user.image || "/user.png"}
+                                                alt={user.name || "user"}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                    </Link>
 
                                     {/* Logout */}
                                     <button
