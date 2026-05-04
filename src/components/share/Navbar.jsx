@@ -93,12 +93,13 @@ function Navbar() {
                 {/* right */}
                 <div className="navbar-end">
                     {
-                        isPending ? <p>lo</p> :
+                        isPending ? <span className="loading loading-spinner loading-md"></span> :
                             user ? (
                                 <div className="flex items-center gap-3" >
 
                                     {/* Avatar */}
-                                    <Link  href={"/profile"} >
+                                    <Link  href={"/profile"} className="flex justify-center items-center gap-2 " >
+                               <p className=" ">{user.name}</p>
                                         < div className="relative w-9 h-9 rounded-full overflow-hidden border" >
                                             <img
                                                 src={user.image || "/user.png"}

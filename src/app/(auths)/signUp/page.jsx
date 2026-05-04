@@ -43,8 +43,8 @@ function SignupPage() {
     }
 
     if (data) {
-      toast.success("Successfully Create a Account!")
       redirect("/login")
+      toast.success("Successfully Create a Account!")
     }
 
 

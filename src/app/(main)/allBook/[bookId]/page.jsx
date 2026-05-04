@@ -13,7 +13,6 @@ async function BookDetailPage({ params }) {
     headers: await headers(),
   });
 
-  console.log(session)
 
   const user = session?.user;
   if (!user) {
