@@ -5,6 +5,7 @@ import FeaturedBook from "@/components/booksComponent/FeaturedBook";
 import Reviews from "@/components/share/Reviews";
 import Stats from "@/components/share/Stats";
 import Newsletter from "@/components/share/Newsletter";
+import Demo from "@/components/Demo";
 
 function HomePage() {
   return (
@@ -15,6 +16,7 @@ function HomePage() {
       <Stats />
       <Newsletter />
       <Reviews />
+      <Demo />
     </div>
   );
 }

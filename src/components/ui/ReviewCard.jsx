@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import React from "react";
 
 function ReviewCard({ review }) {
@@ -18,13 +19,14 @@ function ReviewCard({ review }) {
 
                 {/* User Info */}
                 <div className="flex items-center gap-4">
-
-                    <img
-                        src={image}
-                        alt={name}
-                        className="w-14 h-14 rounded-full object-cover ring-2 ring-gray-300 shadow"
-                    />
-
+                    <div className="relative w-14 h-14 ring-2 ring-gray-300 shadow-md rounded-full overflow-hidden">
+                        <Image
+                            src={image.trim()}
+                            alt={name}
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                     <div>
                         <h3 className="font-semibold text-gray-900">{name}</h3>
                         <p className="text-xs text-gray-500 uppercase tracking-wide">

@@ -7,7 +7,7 @@ export const books = [
     category: "Tech",
     available_quantity: 42,
     rating: 5,
-    image_url: "https://m.media-amazon.com/images/I/619GdqnWD0L._UF1000,1000_QL80_.jpg"
+    image_url: "https://i.ibb.co.com/n8ZSn6tV/mastering-next-11.jpg"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const books = [
     category: "Poems",
     available_quantity: 15,
     rating: 4,
-    image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlBFjIz1avhT70o0xMsu8IMsFzG3FpqzAWBw&s"
+    image_url: "https://i.ibb.co.com/TDcPFZvr/whispera-2.jpg"
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const books = [
     category: "Science",
     available_quantity: 12,
     rating: 5,
-    image_url: "https://m.media-amazon.com/images/I/91avn4X5FBL._UF1000,1000_QL80_.jpg"
+    image_url: "https://i.ibb.co.com/qHSDLvn/68.jpg"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const books = [
     category: "Story",
     available_quantity: 30,
     rating: 4,
-    image_url: "https://upload.wikimedia.org/wikipedia/en/8/87/The_Midnight_Library.jpg"
+    image_url: "https://i.ibb.co.com/HTkn3r9y/Midnight-at-the-Library-4.jpg"
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const books = [
     category: "Novel",
     available_quantity: 20,
     rating: 5,
-    image_url: "https://cdn.ecommercedns.uk/files/1/238331/4/42939154/image.jpg"
+    image_url: "https://i.ibb.co.com/hRqRfKZC/Shadows-of-the-Delta-5.webp"
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const books = [
     category: "Tech",
     available_quantity: 25,
     rating: 4,
-    image_url: "https://m.media-amazon.com/images/I/71uiHscZ1lL._AC_UF1000,1000_QL80_.jpg"
+    image_url: "https://i.ibb.co.com/cSRkB7R6/neural-6.jpg"
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const books = [
     category: "Science",
     available_quantity: 10,
     rating: 5,
-    image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRRoYiSgoWzJpIn720ZmzoKEoEBDH8YDk6RQ&s"
+    image_url: "https://i.ibb.co.com/WNj3Rd5R/88.jpg"
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const books = [
     category: "Poems",
     available_quantity: 18,
     rating: 5,
-    image_url: "https://m.media-amazon.com/images/I/61hVOJQfL+L._AC_UF1000,1000_QL80_.jpg"
+    image_url: "https://i.ibb.co.com/tpH4MtX3/8.jpg"
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const books = [
     category: "Story",
     available_quantity: 8,
     rating: 4,
-    image_url: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1524504871i/37946127._SY180_.jpg"
+    image_url: "https://i.ibb.co.com/j974gHXd/Echoes-of-the-Forgotten-City-450x643.jpg"
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ export const books = [
     category: "Tech",
     available_quantity: 22,
     rating: 4,
-    image_url: "https://m.media-amazon.com/images/I/71b3eLxbxnL._AC_UF1000,1000_QL80_.jpg"
+    image_url: "https://i.ibb.co.com/YT8z81Lp/Marcus-Wright-bookshelf-10.jpg"
   },
   {
     id: 11,
@@ -107,16 +107,16 @@ export const books = [
     category: "Novel",
     available_quantity: 14,
     rating: 5,
-    image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqCOOHPC8OkDieLhoEixnb9FP04e8wl7wpnQ&s"
+    image_url: "https://i.ibb.co.com/7dTY4Z7Y/eyond-the-Blue-Horizon-11.jpg"
   },
   {
     id: 12,
-    title: "The Genetic Blueprint",
+    title: "The Genetic Codes",
     author: "Dr. Li Wei",
     description: "The ability to edit the very code of life is perhaps the most significant scientific achievement...",
     category: "Science",
     available_quantity: 11,
     rating: 5,
-    image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVVRweJ1MiTNTeJzcjZgJnV0MwPbU_JRrrg&s"
+    image_url: "https://i.ibb.co.com/5WpjM5nY/the-genetics-cods-bookshelf-12.jpg"
   }
 ];

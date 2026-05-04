@@ -25,7 +25,7 @@ function SearchBooks({ books }) {
       </div>
 
       {/* books */}
-      <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 gap-6">
         {filteredBooks.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
@@ -34,7 +34,7 @@ function SearchBooks({ books }) {
       {filteredBooks.length === 0 && (
         <p className="h-48 w-52 m-auto rounded-md shadow-md flex flex-col justify-center items-center gap-2 text-center text-gray-400 mt-10">
           <FaBookOpen className="text-5xl text-teal-600 bg-teal-300/20 p-2 rounded" />
-          Sorry! No books found. 
+          Sorry! No books found.
         </p>
       )}
     </>

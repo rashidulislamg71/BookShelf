@@ -4,19 +4,23 @@ import Link from "next/link";
 import React from "react";
 import { LuExternalLink } from "react-icons/lu";
 import Button from "../ui/Button";
+import Image from "next/image";
 
 function FeaturedBookCard({ book }) {
     return (
         <div className="group">
-
             <div className="relative w-full h-48 sm:h-52 md:h-56 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100">
-                {book.image_url && (
-                    <img src={book.image_url} alt={book.title}
-                        className="w-auto h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                )}
 
-
+                <div className="flex justify-center">
+                    <div className="relative w-33 h-48 overflow-hidden ">
+                        <Image
+                            src={book.image_url?.trim() || "/fallback-book.png"}
+                            alt={book.title}
+                            fill
+                            className="object-cover hover:scale-105 transition duration-300"
+                        />
+                    </div>
+                </div>
                 {/* hover effect */}
                 <div className="absolute inset-0  bg-linear-to-r from-teal-700/30 to-teal-400/30  opacity-0 
                         group-hover:opacity-100 transition-all duration-500 
@@ -29,9 +33,14 @@ function FeaturedBookCard({ book }) {
                 </div>
             </div>
 
+              {/* Title */}
+            <h3 className="text-xl font-semibold mt-3 text-gray-700 line-clamp-1">
+                {book.title}
+            </h3>
+
             {/* button */}
             <div className="mt-3">
-                <Link href={`/books/${book.id}`} >
+                <Link href={`/allBook/${book.id}`} >
                     <Button className="w-full" >
                         View Details
                     </Button>

@@ -1,5 +1,6 @@
 
-"use Client"
+"use client";
+
 import React from "react";
 import { books } from "@/lib/booksData";
 import SearchBooks from "@/components/ui/SearchBook";
@@ -22,6 +23,7 @@ function AllBooksPage() {
       </div>
 
       <SearchBooks books={books} />
+
     </section>
   );
 }
