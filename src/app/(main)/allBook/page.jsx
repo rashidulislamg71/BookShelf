@@ -8,7 +8,7 @@ import SearchBooks from "@/components/ui/SearchBook";
 function AllBooksPage() {
 
   return (
-    <section className="pt-28 pb-16 px-4 md:px-16">
+    <section className="pt-10 pb-16 px-4 md:px-10">
 
       {/* hero section*/}
       <div className="text-center mb-6">

@@ -17,10 +17,11 @@ import {
 
 import { FaUser, FaEnvelope, FaLock, FaBookOpen, FaArrowRight } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
+import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 function SignupPage() {
-  const router = useRouter();
+  const [isVisible, setIsVisible] = useState(false);
 
 
   const onSubmit = async (e) => {
@@ -40,7 +41,7 @@ function SignupPage() {
     }
 
     if (data) {
-      router.push("/login");
+      redirect("/login")
     }
 
 
@@ -99,58 +100,61 @@ function SignupPage() {
               <div className="relative">
 
 
-                <Input name="name" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="John Doe" />
+                <Input name="name" className="w-full pl-10 pr-4 py-5 border rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
+  focus-within:border-teal-500 transition-all" placeholder="John Doe" />
 
                 <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
               </div>
               <FieldError className="text-sm text-red-500 mt-1 ml-1" />
             </TextField>
 
+
+
             {/* email */}
-            <div>
-              <TextField
-                className="group"
-                name="email"
-                type="email"
-                isRequired
-                validate={(value) => {
-                  if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-                    return "Enter valid email";
-                  }
-                }}
-              >
-                <Label className="block text-sm font-medium text-gray-700">Email</Label>
-                <div className="relative">
+            <TextField
+              className="group"
+              name="email"
+              type="email"
+              isRequired
+              validate={(value) => {
+                if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                  return "Enter valid email";
+                }
+              }}
+            >
+              <Label className="block text-sm font-medium text-gray-700">Email</Label>
+              <div className="relative">
 
-                  <Input name="email" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="you@example.com" />
+                <Input name="email" className="w-full pl-10 pr-4 py-5 border border-gray-200 rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
+  focus-within:border-teal-500 transition-all" placeholder="you@example.com" />
 
-                  <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
-                </div>
-                <FieldError className="text-sm text-red-500 mt-1 ml-1" />
-              </TextField>
-            </div>
+                <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
+              </div>
+              <FieldError className="text-sm text-red-500 mt-1 ml-1" />
+            </TextField>
 
             {/* image url */}
-            {/* <TextField
+            <TextField
               name="image_url"
               type="url"
               // isRequired
               validate={(value) => {
-                if (!value.startsWith("http")) {
-                  return "Enter a valid image URL";
+                if (!value) return;
+
+                if (!/^https?:\/\/.+/i.test(value)) {
+                  return "Enter a valid image URL (must start with http/https)";
                 }
               }}
             >
-              <Label>Image URL</Label>
-              <Input className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="https://example.com/image.jpg" />
+              <Label className="block text-sm font-medium text-gray-700 "> Image URL (Optional) </Label>
+              <Input name="image_url" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="https://example.com/image.jpg" />
               <FieldError />
-            </TextField> */}
+            </TextField>
 
-            {/* password */}
+            {/* password  */}
             <TextField
+              className="w-full group"
               name="password"
-              type="password"
-              className="group"
               isRequired
               validate={(value) => {
                 if (value.length < 8) return "Min 8 characters";
@@ -158,20 +162,43 @@ function SignupPage() {
                 if (!/[0-9]/.test(value)) return "1 number required";
               }}
             >
-              <Label className="block text-sm font-medium text-gray-700">Password</Label>
-              <div className="relative">
+              <Label className="block text-sm font-medium text-gray-700">
+                Password
+              </Label>
 
-                <Input className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="••••••••" />
+              <InputGroup className="relative w-full pl-7 pr-4 py-0.5 border border-gray-200 rounded-lg 
+  focus-within:ring-2 focus-within:ring-teal-500/30
+  focus-within:border-teal-500
+  transition-all duration-200">
+
+                <InputGroup.Input
+                  name="password"
+                  type={isVisible ? "text" : "password"}
+                  placeholder="••••••••"
+                />
 
                 <FaLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
-              </div>
+
+                <InputGroup.Suffix className="pr-0">
+                  <Button
+                    isIconOnly
+                    size="sm"
+                    variant="ghost"
+                    onPress={() => setIsVisible(!isVisible)}
+                  >
+                    {isVisible ? <Eye className="size-4" /> : <EyeSlash className="size-4" />}
+                  </Button>
+                </InputGroup.Suffix>
+
+              </InputGroup>
+
               <FieldError className="text-sm text-red-500 mt-1 ml-1" />
             </TextField>
 
             {/* submit */}
             <button
               type="submit"
-              className="w-full bg-teal-600 text-white font-bold py-2.5 rounded-lg mt-4 hover:bg-teal-700 shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full bg-teal-600 text-white font-bold py-2.5 rounded-lg mt-4 hover:bg-teal-700 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               Get Started
               <FaArrowRight />
