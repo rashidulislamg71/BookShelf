@@ -3,7 +3,15 @@ import Image from "next/image";
 import React from "react";
 
 function ReviewCard({ review }) {
-    const { name, country, comment, rating, image } = review;
+    const {
+        name,
+        country,
+        comment,
+        rating = 0,
+        image,
+    } = review;
+
+    const avatar = image?.trim() || "/user.png";
 
     return (
         <div className="relative w-[380px] md:w-[420px] md:p-6 rounded-xl backdrop-blur-md border border-gray-300 bg-gray-100 shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
@@ -21,7 +29,7 @@ function ReviewCard({ review }) {
                 <div className="flex items-center gap-4">
                     <div className="relative w-14 h-14 ring-2 ring-gray-300 shadow-md rounded-full overflow-hidden">
                         <Image
-                            src={image.trim()}
+                            src={avatar}
                             alt={name}
                             fill
                             className="object-cover"

@@ -4,15 +4,16 @@ import { authClient } from "@/lib/auth-client";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import { Button, FieldError, Input, InputGroup, Label, TextField } from "@heroui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FaEnvelope, FaLock, FaBookOpen, FaArrowRight } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
-
+  let fError;
   const onSubmit = async (e) => {
+
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
@@ -25,11 +26,11 @@ function LoginPage() {
     })
 
     if (error) {
-      alert(error.message || "Something went wrong");
+      toast.error(`"${error.message}" || "Something went wrong!"`)
     }
-    if(data){
-      redirect("/")
-    }
+
+     toast.success("Successfully login your account!")
+
   }
 
 

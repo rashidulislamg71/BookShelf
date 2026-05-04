@@ -5,6 +5,8 @@ import Rating from './Rating'
 import Image from 'next/image'
 
 function BookCard({ book }) {
+
+
     return (
         <div className="md:bg-white md:rounded-xl md:border
          md:border-gray-100 p-2 md:py-4 shadow-sm hover:shadow-lg transition duration-300">

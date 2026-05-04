@@ -28,7 +28,7 @@ function Newsletter() {
               <div className="inline-flex  items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-200 shadow-sm mb-6">
                 <LuSparkles className="text-teal-500 w-3 h-3" />
                 <span className="text-[10px] font-bold tracking-[0.15em] text-gray-500 uppercase">
-                  Book Club
+                Join Book Club
                 </span>
               </div>
 

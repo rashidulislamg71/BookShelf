@@ -15,10 +15,11 @@ import {
   InputGroup,
 } from "@heroui/react";
 
-import { FaUser, FaEnvelope, FaLock, FaBookOpen, FaArrowRight } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaLock, FaBookOpen, FaArrowRight, FaImages } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { redirect } from "next/navigation";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
+import toast from "react-hot-toast";
 
 function SignupPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,16 +32,18 @@ function SignupPage() {
     const { data, error } = await authClient.signUp.email({
       name: userData.name,
       email: userData.email,
+      image: userData.image_url,
       password: userData.password,
       callbackURL: "/login"
 
     })
 
     if (error) {
-      alert(error.message || "Something went wrong");
+      toast.error(`"${error.message}" || "Something went wrong!"`);
     }
 
     if (data) {
+      toast.success("Successfully Create a Account!")
       redirect("/login")
     }
 
@@ -98,8 +101,6 @@ function SignupPage() {
 
               <Label className="block text-sm font-medium text-gray-700">Full Name</Label>
               <div className="relative">
-
-
                 <Input name="name" className="w-full pl-10 pr-4 py-5 border rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
   focus-within:border-teal-500 transition-all" placeholder="John Doe" />
 
@@ -124,7 +125,6 @@ function SignupPage() {
             >
               <Label className="block text-sm font-medium text-gray-700">Email</Label>
               <div className="relative">
-
                 <Input name="email" className="w-full pl-10 pr-4 py-5 border border-gray-200 rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
   focus-within:border-teal-500 transition-all" placeholder="you@example.com" />
 
@@ -135,6 +135,7 @@ function SignupPage() {
 
             {/* image url */}
             <TextField
+              className="group"
               name="image_url"
               type="url"
               // isRequired
@@ -147,8 +148,13 @@ function SignupPage() {
               }}
             >
               <Label className="block text-sm font-medium text-gray-700 "> Image URL (Optional) </Label>
-              <Input name="image_url" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="https://example.com/image.jpg" />
-              <FieldError />
+              <div className="relative" >
+                <Input name="image_url" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="https://example.com/image.jpg" />
+
+                <FaImages className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
+              </div>
+
+              <FieldError className="text-sm text-red-500 mt-1 ml-1" />
             </TextField>
 
             {/* password  */}

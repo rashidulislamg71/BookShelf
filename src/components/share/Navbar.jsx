@@ -5,12 +5,19 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import Logo from "../ui/Logo";
 import { signOut, useSession } from "@/lib/auth-client";
-import { FaUser } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 function Navbar() {
+    const router = useRouter();
 
     const { data, isPending } = useSession();
     const user = data?.user;
+
+
+    const handleLogout = async () => {
+        await signOut();
+        router.push("/login");
+    };
 
     return (
         <div className="fixed w-full z-[100]">
@@ -83,33 +90,41 @@ function Navbar() {
                     </ul>
                 </div>
 
-                {/* right section */}
+                {/* right */}
                 <div className="navbar-end">
-                    <ul className="flex gap-5">
-                        {
-                            isPending ? <li>
-                                <NavLink
-                                    className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
-                             hover:bg-teal-50 duration-300 py-1 px-5 rounded"
+                    {
+                        isPending ? <p>lo</p>:
+                            user ? (
+                                <div className="flex items-center gap-3" >
+
+                                    {/* Avatar */}
+                                    < div className="relative w-9 h-9 rounded-full overflow-hidden border" >
+                                        <img
+                                            src={user.image || "/user.png"}
+                                            alt={user.name || "user"}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+
+                                    {/* Logout */}
+                                    <button
+                                        onClick={handleLogout}
+                                        className="text-[16px] cursor-pointer hover:text-teal-500  border py-1 px-2 rounded-sm border-teal-600 "
+                                    >
+                                        Sign out
+                                    </button>
+
+                                </div>
+                            ) : (
+                                <Link
                                     href="/login"
+                                    className="border-2 border-teal-200 hover:border-teal-500 text-teal-700 hover:bg-teal-50 duration-300 py-1 px-5 rounded"
                                 >
                                     Login
-                                </NavLink>
-                            </li> : user ? <div className="flex gap-2 justify-center items-center"><FaUser /> <button onClick={(() => signOut())}>Sign out</button></div> :
-                                <li>
-                                    <NavLink
-                                        className="border-2 border-teal-200 hover:border-teal-500  text-teal-700
-                             hover:bg-teal-50 duration-300 py-1 px-5 rounded"
-                                        href="/login"
-                                    >
-                                        Login
-                                    </NavLink>
-                                </li>
-                        }
-
-                    </ul>
+                                </Link>
+                            )}
                 </div>
-
             </div>
         </div>
     );

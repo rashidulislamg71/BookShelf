@@ -1,7 +1,36 @@
-import React from 'react';
-import {  LuUsers,LuPenTool } from "react-icons/lu";
-import { BookOpen } from '@gravity-ui/icons';
-import { BiWorld } from 'react-icons/bi';
+
+
+"use client";
+
+import React from "react";
+import { useSpring, animated } from "@react-spring/web";
+import { LuUsers, LuPenTool } from "react-icons/lu";
+import { BookOpen } from "@gravity-ui/icons";
+import { BiWorld } from "react-icons/bi";
+
+// Floating wrapper
+function FloatingCard({ children, delay = 0, reverse = false }) {
+    const float = useSpring({
+        from: { transform: "translate3d(0px, 0px, 0px)" },
+        to: async (next) => {
+            while (1) {
+                await next({
+                    transform: `translate3d(0px, ${reverse ? 14 : -14}px, 0px)`
+                });
+                await next({
+                    transform: "translate3d(0px, 0px, 0px)"
+                });
+            }
+        },
+        delay,
+        config: {
+            tension: 60,  
+            friction: 5,  
+        },
+    });
+
+    return <animated.div style={float}>{children}</animated.div>;
+}
 
 function Stats() {
     const stats = [
@@ -42,7 +71,8 @@ function Stats() {
     return (
         <section className="px-4 md:px-16 mt-15">
             <div className="max-w-7xl mx-auto px-6">
-                  {/*  Section Title */}
+
+                {/* Title */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
                         Trusted by Readers Worldwide
@@ -51,32 +81,41 @@ function Stats() {
                         Growing community of book lovers across the globe
                     </p>
                 </div>
+
+                {/* Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {stats.map((item) => (
-                        <div
+
+                    {stats.map((item, i) => (
+                        <FloatingCard
                             key={item.id}
-                            className="bg-white py-4 rounded-xl border border-gray-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-sm hover:shadow-gray-200/50"
+                            delay={i * 150}
+                            reverse={i % 2 === 0}   // 🔥 alternate direction
                         >
-                         
-                            <div/>
-                            <div className="relative flex flex-col items-center">
-                                {/* Icon Circle */}
-                                <div className={`flex items-center justify-center w-12 h-12 rounded-full ${item.bgColor} ${item.color}  `}>
-                                    {item.icon}
+                            <div className="bg-white py-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+
+                                <div className="flex flex-col items-center">
+
+                                    {/* Icon */}
+                                    <div className={`flex items-center justify-center w-12 h-12 rounded-full ${item.bgColor} ${item.color}`}>
+                                        {item.icon}
+                                    </div>
+
+                                    {/* Value */}
+                                    <h2 className="text-2xl mt-3 font-extrabold text-gray-700">
+                                        {item.value}
+                                    </h2>
+
+                                    {/* Title */}
+                                    <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+                                        {item.title}
+                                    </p>
+
                                 </div>
 
-                                {/* Stats Value */}
-                                <h2 className="text-2xl mt-2 font-extrabold text-gray-700 tracking-tight ">
-                                    {item.value}
-                                </h2>
-
-                                {/* Stats Title */}
-                                <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
-                                    {item.title}
-                                </p>
                             </div>
-                        </div>
+                        </FloatingCard>
                     ))}
+
                 </div>
             </div>
         </section>

@@ -8,6 +8,8 @@ import SearchBooks from "@/components/ui/SearchBook";
 
 function AllBooksPage() {
 
+  
+
   return (
     <section className="pt-10 pb-16 px-4 md:px-10">
 

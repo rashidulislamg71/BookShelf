@@ -45,7 +45,7 @@ export default function BookDetail({ book }) {
           </div>
 
           {/* rating */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 my-2">
             <Rating rating={book.rating} />
             <span className="text-gray-400 text-sm">| 1024 Reviews</span>
           </div>
@@ -64,7 +64,7 @@ export default function BookDetail({ book }) {
             <h3 className="text-lg font-bold text-[#005461] mb-2">
               Description
             </h3>
-            <p className="">
+            <p className="text-md ">
               {book.description}
             </p>
           </div>
