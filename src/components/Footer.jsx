@@ -129,7 +129,7 @@ function Footer() {
                 </div>
 
                 <span className="text-gray-200 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
-                  +880 1234 567 890
+                  +880 1849 267 660
                 </span>
               </div>
 
@@ -141,7 +141,7 @@ function Footer() {
                 </div>
 
                 <span className="text-gray-200 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
-                  hello@bookflow.com
+                  jrashidulislam0103@gmail.com
                 </span>
               </div>
 
