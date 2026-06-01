@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { authClient } from "@/lib/auth-client";
@@ -15,18 +13,30 @@ import {
   InputGroup,
 } from "@heroui/react";
 
-import { FaUser, FaEnvelope, FaLock, FaBookOpen, FaArrowRight, FaImages } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaLock,
+  FaBookOpen,
+  FaArrowRight,
+  FaImages,
+} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { redirect } from "next/navigation";
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 function SignupPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
     const { data, error } = await authClient.signUp.email({
@@ -34,26 +44,37 @@ function SignupPage() {
       email: userData.email,
       image: userData.image_url,
       password: userData.password,
-      callbackURL: "/login"
-
-    })
+      callbackURL: "/login",
+    });
 
     if (error) {
-      toast.error(`"${error.message}" || "Something went wrong!"`);
+      toast.error(error.message);
+      setLoading(false);
+      return;
     }
 
     if (data) {
-      redirect("/login")
-      toast.success("Successfully Create a Account!")
+      toast.success("Successfully Create Account!");
+      router.push("/login");
     }
+    setLoading(false);
+  };
 
+  const handleGoogleSignIn = async () => {
+    setGoogleLoading(true);
 
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+
+    setGoogleLoading(false);
+    toast.success("Successfully Login!");
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center pb-20 pt-36 md:px-16">
       <div className="max-w-xl w-full bg-white rounded-xl">
-
         {/* top bar */}
         <div className="h-2 bg-teal-600 w-full"></div>
 
@@ -66,13 +87,26 @@ function SignupPage() {
               </div>
             </div>
             <h1 className="text-3xl font-bold text-gray-800">Create Account</h1>
-            <p className="text-gray-500 mt-1">Start your reading journey today</p>
+            <p className="text-gray-500 mt-1">
+              Start your reading journey today
+            </p>
           </div>
 
           {/* google */}
-          <button className="cursor-pointer w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-50 transition-all font-medium text-gray-700 shadow-sm">
+          {/* <button className="cursor-pointer w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-50 transition-all font-medium text-gray-700 shadow-sm">
             <FcGoogle className="text-2xl" />
             Sign up with Google
+          </button> */}
+
+          <button
+            disabled={googleLoading}
+            onClick={handleGoogleSignIn}
+            type="button"
+            className="cursor-pointer w-full flex items-center justify-center gap-3 border border-gray-300 py-2 rounded-lg hover:bg-gray-50 transition-all font-medium text-gray-700 shadow-sm"
+          >
+            <FcGoogle />
+
+            {googleLoading ? "Signing In..." : "Continue with Google"}
           </button>
 
           {/* divider */}
@@ -88,7 +122,6 @@ function SignupPage() {
             render={(props) => <form {...props} />}
             onSubmit={onSubmit}
           >
-
             {/* name */}
             <TextField
               className="group"
@@ -98,18 +131,21 @@ function SignupPage() {
                 if (value.length < 3) return "Name must be 3+ characters";
               }}
             >
-
-              <Label className="block text-sm font-medium text-gray-700">Full Name</Label>
+              <Label className="block text-sm font-medium text-gray-700">
+                Full Name
+              </Label>
               <div className="relative">
-                <Input name="name" className="w-full pl-10 pr-4 py-5 border rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
-  focus-within:border-teal-500 transition-all" placeholder="John Doe" />
+                <Input
+                  name="name"
+                  className="w-full pl-10 pr-4 py-5 border rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
+  focus-within:border-teal-500 transition-all"
+                  placeholder="John Doe"
+                />
 
                 <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
               </div>
               <FieldError className="text-sm text-red-500 mt-1 ml-1" />
             </TextField>
-
-
 
             {/* email */}
             <TextField
@@ -123,10 +159,16 @@ function SignupPage() {
                 }
               }}
             >
-              <Label className="block text-sm font-medium text-gray-700">Email</Label>
+              <Label className="block text-sm font-medium text-gray-700">
+                Email
+              </Label>
               <div className="relative">
-                <Input name="email" className="w-full pl-10 pr-4 py-5 border border-gray-200 rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
-  focus-within:border-teal-500 transition-all" placeholder="you@example.com" />
+                <Input
+                  name="email"
+                  className="w-full pl-10 pr-4 py-5 border border-gray-200 rounded-lg outline-none focus-within:ring-2 focus-within:ring-teal-500/30
+  focus-within:border-teal-500 transition-all"
+                  placeholder="you@example.com"
+                />
 
                 <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
               </div>
@@ -147,9 +189,16 @@ function SignupPage() {
                 }
               }}
             >
-              <Label className="block text-sm font-medium text-gray-700 "> Image URL (Optional) </Label>
-              <div className="relative" >
-                <Input name="image_url" className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all" placeholder="https://example.com/image.jpg" />
+              <Label className="block text-sm font-medium text-gray-700 ">
+                {" "}
+                Image URL (Optional){" "}
+              </Label>
+              <div className="relative">
+                <Input
+                  name="image_url"
+                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg outline-none focus:ring-4 focus:ring-teal-500/10 focus:border-teal-500 transition-all"
+                  placeholder="https://example.com/image.jpg"
+                />
 
                 <FaImages className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-teal-600 transition-colors" />
               </div>
@@ -172,11 +221,12 @@ function SignupPage() {
                 Password
               </Label>
 
-              <InputGroup className="relative w-full pl-7 pr-4 py-0.5 border border-gray-200 rounded-lg 
+              <InputGroup
+                className="relative w-full pl-7 pr-4 py-0.5 border border-gray-200 rounded-lg 
   focus-within:ring-2 focus-within:ring-teal-500/30
   focus-within:border-teal-500
-  transition-all duration-200">
-
+  transition-all duration-200"
+              >
                 <InputGroup.Input
                   name="password"
                   type={isVisible ? "text" : "password"}
@@ -192,24 +242,35 @@ function SignupPage() {
                     variant="ghost"
                     onPress={() => setIsVisible(!isVisible)}
                   >
-                    {isVisible ? <Eye className="size-4" /> : <EyeSlash className="size-4" />}
+                    {isVisible ? (
+                      <Eye className="size-4" />
+                    ) : (
+                      <EyeSlash className="size-4" />
+                    )}
                   </Button>
                 </InputGroup.Suffix>
-
               </InputGroup>
 
               <FieldError className="text-sm text-red-500 mt-1 ml-1" />
             </TextField>
 
             {/* submit */}
-            <button
+            {/* <button
               type="submit"
               className="w-full bg-teal-600 text-white font-bold py-2.5 rounded-lg mt-4 hover:bg-teal-700 shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               Get Started
               <FaArrowRight />
-            </button>
+            </button> */}
 
+            <button
+              disabled={loading}
+              type="submit"
+              className="w-full bg-teal-600 text-white font-bold py-2
+               rounded-lg mt-5 hover:bg-teal-700 shadow-md shadow-teal-100 hover:shadow-teal-200 transition-all flex items-center justify-center gap-2 group active:scale-[0.99] cursor-pointer"
+            >
+              {loading ? "Signing Up..." : "Sign Up"}
+            </button>
           </Form>
 
           {/* footer */}
