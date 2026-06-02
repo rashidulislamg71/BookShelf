@@ -4,7 +4,7 @@ export const books = [
     title: "Mastering Next.js 15",
     author: "Jordan Walke",
     description: "In the rapidly evolving world of web development, staying ahead of the curve is essential for any professional. This comprehensive guide to Next.js 15 dives deep into the latest features of the framework, focusing on the revolutionary App Router, React Server Components, and advanced data fetching techniques. Whether you are building a small personal blog or a high-traffic enterprise application, this book provides the structural patterns and optimization strategies needed to ensure your site is fast, SEO-friendly, and highly maintainable. You will learn how to leverage streaming, partial pre-rendering, and middleware to create seamless user experiences. With detailed code examples and architectural insights, this book serves as the ultimate resource for frontend developers looking to master modern full-stack JavaScript development and deploy production-ready applications with absolute confidence in their performance and scalability across various devices and network conditions.",
-    category: "Tech",
+    category: "Technology",
     available_quantity: 42,
     rating: 5,
     image_url: "https://i.ibb.co.com/n8ZSn6tV/mastering-next-11.jpg"
@@ -14,7 +14,7 @@ export const books = [
     title: "Whispers of the Monsoon",
     author: "Tahmima Anam",
     description: "This evocative collection of contemporary poetry captures the essence of life under the heavy skies of the monsoon season...",
-    category: "Poems",
+    category: "Poetry",
     available_quantity: 15,
     rating: 4,
     image_url: "https://i.ibb.co.com/TDcPFZvr/whispera-2.jpg"
@@ -54,7 +54,7 @@ export const books = [
     title: "Neural Networks Simplified",
     author: "Alan Turing II",
     description: "Artificial Intelligence is no longer a concept of the far future...",
-    category: "Tech",
+    category: "Technology",
     available_quantity: 25,
     rating: 4,
     image_url: "https://i.ibb.co.com/cSRkB7R6/neural-6.jpg"
@@ -74,7 +74,7 @@ export const books = [
     title: "Rhythms of the Soul",
     author: "Maya Angelou",
     description: "This powerful collection of verses serves as a mirror to the human condition...",
-    category: "Poems",
+    category: "Poetry",
     available_quantity: 18,
     rating: 5,
     image_url: "https://i.ibb.co.com/tpH4MtX3/8.jpg"
@@ -94,7 +94,7 @@ export const books = [
     title: "Cybersecurity Frontiers",
     author: "Marcus Wright",
     description: "In an era where our lives are increasingly lived online...",
-    category: "Tech",
+    category: "Technology",
     available_quantity: 22,
     rating: 4,
     image_url: "https://i.ibb.co.com/YT8z81Lp/Marcus-Wright-bookshelf-10.jpg"
